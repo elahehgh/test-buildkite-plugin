@@ -1,5 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-echo "--- Searching for nothing"
-echo "$BUILDKITE_BUILD_CHECKOUT_PATH"

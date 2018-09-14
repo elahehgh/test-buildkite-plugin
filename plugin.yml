@@ -1,0 +1,13 @@
+name: Test
+description: test plugin
+author:
+requirements:
+  - terraform
+  - bash
+  - aws
+configuration:
+  properties:
+    bucket:
+      type: string
+  required:
+    - bucket

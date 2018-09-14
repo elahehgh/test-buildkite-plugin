@@ -1,24 +1,30 @@
+#steps:
+#  - name: ':allthethings: Running test script'
+#    command:
+#     - "./scripts/test.sh"
+#
+#  - name: ':terraform: :clipboard: plan'
+#    branches: "master"
+#    plugins:
+#      docker-compose:
+#        pull: plan
+#        run: plan
+#      artifacts#v1.1.0:
+#        upload: tfplan-test
+#
+#  - wait
+#
+#  - name: ":terraform: :rocket: apply!"
+#    branches: "master"
+#    plugins:
+#      docker-compose:
+#        pull: apply
+#        run: apply
+#      artifacts#v1.1.0:
+#        download: tfplan-test
 steps:
-  - name: ':allthethings: Running test script'
-    command:
-     - "./scripts/test.sh"
 
-  - name: ':terraform: :clipboard: plan'
-    branches: "master"
+  - label: ":shell: Shellcheck"
     plugins:
-      docker-compose:
-        pull: plan
-        run: plan
-      artifacts#v1.1.0:
-        upload: tfplan-test
-
-  - wait
-
-  - name: ":terraform: :rocket: apply!"
-    branches: "master"
-    plugins:
-      docker-compose:
-        pull: apply
-        run: apply
-      artifacts#v1.1.0:
-        download: tfplan-test
+      shellcheck#v1.1.1:
+        files: hooks/**hookshooks

@@ -1,13 +1,20 @@
-name: Test
-description: test plugin
-author:
-requirements:
-  - terraform
-  - bash
-  - aws
+#name: Test
+#description: test plugin
+#author:
+#requirements:
+#  - terraform
+#  - bash
+#  - aws
+#configuration:
+#  properties:
+#    bucket:
+#      type: string
+#  required:
+#    - bucket
+name: Test Plugin
+description: Just a test
+author: https://github.com/elahehgh
+requirements: []
 configuration:
-  properties:
-    bucket:
-      type: string
-  required:
-    - bucket
+  properties: {}
+  additionalProperties: false

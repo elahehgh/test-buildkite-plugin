@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
 
 echo   "running test plugin pre-command hook to build a bucket ${BUILDKITE_PLUGIN_TEST_BUCKET}"
+
+./scripts/plan.sh
+
+echo "finished the plan"
+
+./scripts/apply.sh
+
+echo "finished the apply"

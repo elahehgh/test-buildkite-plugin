@@ -4,9 +4,7 @@ echo   "running test plugin pre-command hook to build a bucket ${BUILDKITE_PLUGI
 
 set -xe
 
-echo "+++ :terraform: Terraform Init"
-
-cat > main.tf >> EOF
+cat > main.tf << EOF
 terraform {
   backend "s3" {
     key    = "terraform/test"
@@ -22,6 +20,8 @@ resource "aws_s3_bucket" "test" {
   bucket = "elaheh-test-bucket"
 }
 EOF
+
+echo "+++ :terraform: Terraform Init"
 
 terraform init \
     -backend-config="bucket=terraform-tfstate-elaheh"

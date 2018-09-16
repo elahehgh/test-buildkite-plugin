@@ -6,6 +6,23 @@ set -xe
 
 echo "+++ :terraform: Terraform Init"
 
+cat >> EOF
+terraform {
+  backend "s3" {
+    key    = "terraform/test"
+    region = "ap-southeast-2"
+  }
+}
+
+provider "aws" {
+  region = "ap-southeast-2"
+}
+
+resource "aws_s3_bucket" "test" {
+  bucket = "elaheh-test-bucket"
+}
+EOF > main.tf
+
 terraform init \
     -backend-config="bucket=terraform-tfstate-elaheh"
 echo "+++ :terraform: Terraform Plan"

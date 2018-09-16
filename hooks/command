@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-echo   running test plugin to build a bucket ${BUILDKITE_PLUGIN_TEST-BUILDKITE-PLUGIN_BUKET}
+echo   "running test plugin to build a bucket ${BUILDKITE_PLUGIN_TEST_BUKET}"

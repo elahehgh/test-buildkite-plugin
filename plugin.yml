@@ -1,7 +1,23 @@
-name: Detect Clowns
-description: Detects clown emojis in your codebase
-author: https://github.com/buildkite
+#name: Test
+#description: test plugin
+#author:
+#requirements:
+#  - terraform
+#  - bash
+#  - aws
+#configuration:
+#  properties:
+#    bucket:
+#      type: string
+#  required:
+#    - bucket
+name: Test Plugin
+description: Just a test
+author: https://github.com/elahehgh
 requirements: []
 configuration:
-  properties: {}
-  additionalProperties: false
+  properties:
+    bucket:
+      type: string
+  required:
+    - bucket

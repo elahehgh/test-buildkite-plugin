@@ -1,30 +1,13 @@
-#steps:
-#  - name: ':allthethings: Running test script'
-#    command:
-#     - "./scripts/test.sh"
-#
-#  - name: ':terraform: :clipboard: plan'
-#    branches: "master"
-#    plugins:
-#      docker-compose:
-#        pull: plan
-#        run: plan
-#      artifacts#v1.1.0:
-#        upload: tfplan-test
-#
-#  - wait
-#
-#  - name: ":terraform: :rocket: apply!"
-#    branches: "master"
-#    plugins:
-#      docker-compose:
-#        pull: apply
-#        run: apply
-#      artifacts#v1.1.0:
-#        download: tfplan-test
 steps:
-
+  - label: "🤡 :hammer:"
+    plugins:
+      docker-compose#v2.5.1:
+        run: tests
+  - label: ":sparkles: lint"
+    plugins:
+      plugin-linter#v2.0.0:
+        id: detect-clowns
   - label: ":shell: Shellcheck"
     plugins:
       shellcheck#v1.1.1:
-        files: hooks/**hookshooks
+        files: hooks/**

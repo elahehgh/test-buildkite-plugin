@@ -1,19 +1,6 @@
-#name: Test
-#description: test plugin
-#author:
-#requirements:
-#  - terraform
-#  - bash
-#  - aws
-#configuration:
-#  properties:
-#    bucket:
-#      type: string
-#  required:
-#    - bucket
-name: Test Plugin
-description: Just a test
-author: https://github.com/elahehgh
+name: Detect Clowns
+description: Detects clown emojis in your codebase
+author: https://github.com/buildkite
 requirements: []
 configuration:
   properties: {}

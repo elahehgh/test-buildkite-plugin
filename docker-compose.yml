@@ -1,27 +1,6 @@
-version: "3"
+version: '2'
 services:
-
-  plan:
-    image: hashicorp/terraform
-    environment:
-      - TF_INPUT=0
-      - AWS_ACCESS_KEY_ID
-      - AWS_SECRET_ACCESS_KEY
+  tests:
+    image: buildkite/plugin-tester:latest@sha256:38c4bc75d1886f0d2aa2d3416531397c11f260ef325fcbf1182755cc6f8a17db
     volumes:
-      - .:/workdir
-      - /usr/local/var/buildkite-agent/builds/:/usr/local/var/buildkite-agent/builds/
-    working_dir: /workdir
-    entrypoint: sh
-    command: -c "scripts/plan.sh"
-
-  apply:
-    image: hashicorp/terraform
-    environment:
-      - TF_INPUT=0
-      - AWS_ACCESS_KEY_ID
-      - AWS_SECRET_ACCESS_KEY
-    volumes:
-      - .:/workdir
-    working_dir: /workdir
-    entrypoint: sh
-    command: -c "scripts/apply.sh"
+      - ".:/plugin:ro"
